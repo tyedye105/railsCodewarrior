@@ -1,0 +1,7 @@
+<% if @user === nil %>
+<h1> You need to sign in</h1>
+<%= link_to "Sign in", new_user_session_path %>
+<% else %>
+<h1>Does this work <%= @user.email %></h1>
+<%= link_to "Sign out", destroy_user_session_path, :method => 'delete'  %>
+<% end  %>
