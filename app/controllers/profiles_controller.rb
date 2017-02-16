@@ -10,8 +10,9 @@ class ProfilesController < ApplicationController
 
   def create
     @user = current_user
-    @profile = @user.profiles.new(profile_params)
-    if @profile.save
+    binding.pry
+    @profile = @user.profile.new(profile_params)
+    if @user.save
       flash[:notice] = "Profile Created!"
       redirect_to profile_path(@profile)
     else

@@ -1,0 +1,7 @@
+<%= form_for [@user, @profile] do |pr| %>
+  <%= pr.label :name %>
+  <%= pr.text_field :name %>
+  <%= pr.label :username %>
+  <%= pr.text_field :username %>
+  <%= pr.submit 'Save' %>
+<% end %>

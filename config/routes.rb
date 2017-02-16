@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'users#show'
-  resources :profile, :except => [:index]
+  devise_for :users
+  resources :users do
+    resources :profiles
+  end
+    resources :profiles, :except => [:index]
 end
